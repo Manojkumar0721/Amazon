@@ -1,5 +1,6 @@
 package com.tuorsdude.amazon.repo;
 
+<<<<<<< HEAD
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -78,5 +79,8 @@ public class AmazonRepoImpl implements AmazonRepo{
 	}
 
 
+=======
+public class AmazonRepoImpl implements AmazonRepo{
+>>>>>>> 0e5f2cdd2d14cd04906f25a9787f108c5446f4da
 
 }
