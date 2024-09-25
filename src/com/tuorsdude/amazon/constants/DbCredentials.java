@@ -2,7 +2,7 @@ package com.tuorsdude.amazon.constants;
 
 public enum DbCredentials {
 	
-	HOST("jdbc:mysql://localhost:3306/amazon"), USER("root"), PASSWORD("Manojkumary@07"),
+	HOST("jdbc:mysql://localhost:3306/edevice"), USER("root"), PASSWORD("Manojkumary@07"),
 	DRIVER("com.mysql.cj.jdbc.Driver");
 
 	String value;
