@@ -5,21 +5,23 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 import com.tuorsdude.amazon.dto.User;
 import com.tuorsdude.amazon.utils.DbUtils;
 
 public class AmazonRepoImpl implements AmazonRepo{
 	
-
 	@Override
 	public boolean save(User user) {
 		
 		Connection connection = DbUtils.getConnection();
 		
-		String insertQuery = "insert into user(name,address,phone_Number,email,password,created_by) values(?,?,?,?,?,?)";
+		String insertQuery = "insert into user(name,address,phone_Number,email,password,created_by,created_on) values(?,?,?,?,?,?,?)";
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
+			
+			LocalDate date = LocalDate.now();
 			
 			preparedStatement.setString(1,user.getName());
 			preparedStatement.setString(2, user.getAddress());
@@ -27,6 +29,7 @@ public class AmazonRepoImpl implements AmazonRepo{
 			preparedStatement.setString(4, user.getEmail());
 			preparedStatement.setString(5,user.getPassword());
 			preparedStatement.setString(6,user.getEmail());
+			preparedStatement.setObject(7, date);
 			
 			int rowsAffected = preparedStatement.executeUpdate();
 			
