@@ -13,7 +13,7 @@ public class AmazonServiceImpl implements AmazonService{
 		if(user!=null) {
 			if(user.getName()!=null) {
 				System.out.println("Name is valid");
-				if(user.getPassword().length()<8) {
+				if(user.getPassword().length()<10) {
 					System.out.println("Password is accepted");
 					if(user.getEmail().contains("@") && user.getEmail().contains(".")){
 						System.out.println("Email valid");
@@ -72,7 +72,7 @@ public class AmazonServiceImpl implements AmazonService{
 				System.out.println("Login Successful");
 				return user;
 			}
-			System.out.println("Login faild");
+			System.out.println("Login failed");
 		}
 		return null;
 	}
